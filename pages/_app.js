@@ -40,13 +40,13 @@ export default function App({ Component, pageProps }) {
           <meta property="og:url" content="https://quizall.ralisson-mattias.vercel.app/" />
           <meta property="og:title" content="QuizHallo" />
           <meta property="og:description" content="Um quiz sobre o halloween" />
-          <meta property="og:image" content="https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1" />
+          <meta property="og:image" content="https://wallpaperaccess.com/full/86409.jpg" />
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://quizall.ralisson-mattias.vercel.app/" />
           <meta property="twitter:title" content="QuizHallo" />
           <meta property="twitter:description" content="Um quiz sobre o halloween" />
-          <meta property="twitter:image" content="https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1" />
+          <meta property="twitter:image" content="https://wallpaperaccess.com/full/86409.jpg" />
 
 
         </Head>
