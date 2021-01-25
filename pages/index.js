@@ -15,16 +15,13 @@ export const QuizContainer = styled.div`
   @media screen and (max-width: 500px) {
     margin: auto;
     padding: 15px;
-  }
+  } 
 `
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>QuizAll</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      
 
       <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>

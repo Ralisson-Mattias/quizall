@@ -1,6 +1,8 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import db from '../db.json'
 
+import Head from 'next/head'
+
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -8,11 +10,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    /* New styles */
     display: flex;
     flex-direction: column;
     font-family: 'Lato', sans-serif;
-    // Deixa branco no começo
     color: ${({ theme }) => theme.colors.contrastText};
   }
   html, body {
@@ -31,8 +31,21 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <Head>
+          <title>QuizAll</title>
+          <meta property="og:title" content="QuizAll" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta property="og:locale" content="pt_BR" />
+
+          <meta property="og:image" content="db.bg" />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:width" content="800" /> 
+          <meta property="og:image:height" content="600" /> 
+          <meta property="og:type" content="website" />
+
+        </Head>
+            <GlobalStyle />
+            <Component {...pageProps} />
       </ThemeProvider>
     </>
   )
