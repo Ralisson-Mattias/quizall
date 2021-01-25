@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }) {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta property="og:locale" content="pt_BR" />
 
-          <meta property="og:image" content="db.bg" />
+          <meta property="og:image" content="https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1" />
           <meta property="og:image:type" content="image/jpeg" />
           <meta property="og:image:width" content="800" /> 
           <meta property="og:image:height" content="600" /> 
