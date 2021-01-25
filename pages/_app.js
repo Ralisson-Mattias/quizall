@@ -34,6 +34,7 @@ export default function App({ Component, pageProps }) {
         <Head>
           <title>QuizAll</title>
           <meta property="og:title" content="QuizAll" />
+          <meta property="og:site_name" content="QuizAll" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta property="og:locale" content="pt_BR" />
 
