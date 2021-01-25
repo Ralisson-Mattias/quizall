@@ -5,6 +5,8 @@ import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
 
+import Head from 'next/head'
+
 export const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
@@ -18,29 +20,36 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
+    <>
+      <Head>
+        <title>QuizAll</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
 
-        <Widget>
-          <Widget.Header>
-            <h1>The legend of Zelda</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p>Lorem Ipsum ai</p>
-          </Widget.Content>
-        </Widget>
+      <QuizBackground backgroundImage={db.bg}>
+        <QuizContainer>
 
-        <Widget>
-          <Widget.Content>
-            <p>Lorem Ipsum ai</p>
-          </Widget.Content>
-        </Widget>
+          <Widget>
+            <Widget.Header>
+              <h1>The legend of Zelda</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p>Lorem Ipsum ai</p>
+            </Widget.Content>
+          </Widget>
 
-        <Footer />
-      </QuizContainer>
+          <Widget>
+            <Widget.Content>
+              <p>Lorem Ipsum ai</p>
+            </Widget.Content>
+          </Widget>
 
-      <GitHubCorner projectUrl="https://github.com/Ralisson-mattias" />
+          <Footer />
+        </QuizContainer>
 
-    </QuizBackground>
+        <GitHubCorner projectUrl="https://github.com/Ralisson-mattias" />
+
+      </QuizBackground>
+    </>
   )
 }
