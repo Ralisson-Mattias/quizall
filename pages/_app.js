@@ -32,22 +32,26 @@ export default function App({ Component, pageProps }) {
     <>
       <ThemeProvider theme={theme}>
         <Head>
-          <title>QuizAll</title>
-          <meta property="og:title" content="QuizAll" />
-          <meta property="og:description" content="Um quiz para amantes do skate"/>
-          <meta property="og:site_name" content="QuizAll" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <meta property="og:locale" content="pt_BR" />
+          <title>QuizHallo</title>
+          <meta name="title" content="QuizHallo" />
+          <meta name="description" content="Um quiz sobre o halloween" />
 
-          <meta property="og:image" content="https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1" />
-          <meta property="og:image:type" content="image/jpeg" />
-          <meta property="og:image:width" content="800" /> 
-          <meta property="og:image:height" content="600" /> 
           <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://quizall.ralisson-mattias.vercel.app/" />
+          <meta property="og:title" content="QuizHallo" />
+          <meta property="og:description" content="Um quiz sobre o halloween" />
+          <meta property="og:image" content="https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1" />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://quizall.ralisson-mattias.vercel.app/" />
+          <meta property="twitter:title" content="QuizHallo" />
+          <meta property="twitter:description" content="Um quiz sobre o halloween" />
+          <meta property="twitter:image" content="https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1" />
+
 
         </Head>
-            <GlobalStyle />
-            <Component {...pageProps} />
+        <GlobalStyle />
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   )
