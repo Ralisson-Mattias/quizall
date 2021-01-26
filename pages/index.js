@@ -28,7 +28,7 @@ export default function Home() {
 
           <Widget>
             <Widget.Header>
-              <h1>Halloween</h1>
+              <h1>GOD OF WAR</h1>
             </Widget.Header>
             <Widget.Content>
               <p>Lorem Ipsum ai</p>
@@ -37,6 +37,7 @@ export default function Home() {
 
           <Widget>
             <Widget.Content>
+              <h1>Quizes da galera</h1>
               <p>Lorem Ipsum ai</p>
             </Widget.Content>
           </Widget>

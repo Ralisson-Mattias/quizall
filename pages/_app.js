@@ -30,26 +30,26 @@ const theme = db.theme;
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <title>QuizHallo</title>
+        <meta name="title" content="QuizGod" />
+        <meta name="description" content="Um quiz sobre o halloween" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://quizall.ralisson-mattias.vercel.app/" />
+        <meta property="og:title" content="QuizGod" />
+        <meta property="og:description" content="Um quiz sobre o God Of War" />
+        <meta property="og:image" content="hhttps://image.api.playstation.com/vulcan/img/rnd/202010/2217/KAmUQWQ5V9QF3XDzmty1VkKj.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://quizall.ralisson-mattias.vercel.app/" />
+        <meta property="twitter:title" content="QuizGod" />
+        <meta property="twitter:description" content="Um quiz sobre o God Of War" />
+        <meta property="twitter:image" content="https://image.api.playstation.com/vulcan/img/rnd/202010/2217/KAmUQWQ5V9QF3XDzmty1VkKj.png" />
+
+
+      </Head>
       <ThemeProvider theme={theme}>
-        <Head>
-          <title>QuizHallo</title>
-          <meta name="title" content="QuizHallo" />
-          <meta name="description" content="Um quiz sobre o halloween" />
-
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://quizall.ralisson-mattias.vercel.app/" />
-          <meta property="og:title" content="QuizHallo" />
-          <meta property="og:description" content="Um quiz sobre o halloween" />
-          <meta property="og:image" content="https://wallpaperaccess.com/full/86409.jpg" />
-
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://quizall.ralisson-mattias.vercel.app/" />
-          <meta property="twitter:title" content="QuizHallo" />
-          <meta property="twitter:description" content="Um quiz sobre o halloween" />
-          <meta property="twitter:image" content="https://wallpaperaccess.com/full/86409.jpg" />
-
-
-        </Head>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
