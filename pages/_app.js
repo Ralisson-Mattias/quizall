@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>QuizHallo</title>
+        <title>QuizGod</title>
         <meta name="title" content="QuizGod" />
         <meta name="description" content="Um quiz sobre o halloween" />
 
