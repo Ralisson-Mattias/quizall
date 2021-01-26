@@ -1,11 +1,12 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import db from '../db.json'
-
-import Head from 'next/head'
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Head from 'next/head';
+import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
   }
   body {
     margin: 0;
@@ -23,14 +24,15 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 
-const theme = db.theme;
+const { theme } = db;
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+
         <title>QuizGod</title>
         <meta name="title" content="QuizGod" />
         <meta name="description" content="Um quiz sobre o halloween" />
@@ -47,12 +49,15 @@ export default function App({ Component, pageProps }) {
         <meta property="twitter:description" content="Um quiz sobre o God Of War" />
         <meta property="twitter:image" content="https://image.api.playstation.com/vulcan/img/rnd/202010/2217/KAmUQWQ5V9QF3XDzmty1VkKj.png" />
 
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
 
       </Head>
+
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }
