@@ -5,32 +5,41 @@ const Container = styled.div`
 `
 
 const Button = styled.button`
+    background-color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.contrastText};
+    border-radius: ${({ theme }) => theme.borderRadius};
+    border: 0;    
+    outline: 0;
+
     width: 100%;
     margin: 20px 0 0 0;
-    padding: 10px 0%;
+    padding: 10px 0;
     font-weight: bold;
+    text-transform: uppercase;
     font-size: 16px;
-    background-color: ${({ theme }) => theme.colors.secondary};
-    border-radius: 5px;
     color: '#fff';
-    border: none;
-    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        opacity: .5;
+    }
 
     &:disabled {
-        background-color: '#000';
+        background-color: '#979797';
+        cursor: not-allowed;
     }
-    
     
 `
 
-export default function Input({ name, type, disabled }) {
+export default function Input({ disabled, text }) {
     return (
         <Container>
             <Button
-                type={type}
+                type="submit"
                 disabled={disabled}
             >
-                Jogar como {name}
+                {text}
             </Button>
         </Container>
     )

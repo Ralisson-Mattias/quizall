@@ -12,10 +12,11 @@ const InputText = styled.input`
     border: 1px solid ${({ theme }) => theme.colors.primary};
 `
 
-export default function Input({ placeholder, value, onChange }) {
+export default function Input({ placeholder, value, onChange, name }) {
     return (
         <Container>
             <InputText
+                name={name}
                 style={{ color: '#aaa' }}
                 placeholder={placeholder}
                 value={value}
