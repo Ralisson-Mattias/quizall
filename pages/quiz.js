@@ -7,7 +7,41 @@ import QuizLogo from '../src/components/QuizLogo'
 import Widget from '../src/components/Widget'
 import GitHubCorner from '../src/components/GitHubCorner'
 import QuizContainer from '../src/components/QuizContainer'
+import AlternativesForm from '../src/components/AlternativesForm'
 
+
+function ResultWidget({ results }) {
+    return (
+        <Widget>
+            <Widget.Header>
+                <h1>Tela de resultados</h1>
+            </Widget.Header>
+
+            <Widget.Content>
+                <p>
+                     Você acertou
+                     {' '}
+                    {results.filter((x) => x).length}
+                    {' '}
+                    perguntas
+                </p>
+
+                <ul>
+                    {results.map((result, index) => (
+                        <li key={index}>
+                            #
+                            {index + 1}
+                            {' '}
+                            Resultado:
+                            {result === true ? ' Acertou' : ' Errou'}
+                        </li>
+                    ))}
+                </ul>
+            </Widget.Content>
+
+        </Widget>
+    )
+}
 
 function LoadingWidget() {
     return (
@@ -28,11 +62,13 @@ function LoadingWidget() {
     )
 }
 
-function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit }) {
+function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit, addResult }) {
 
     const questionId = `question_${questionIndex}`
-
-    const [active, setActive] = useState(false)
+    const [selectedAlternative, setSelectedAlternative] = useState(undefined)
+    const [isQuestionSubmited, setIsQuestionSubmited] = useState(false)
+    const isCorrect = selectedAlternative === question.answer
+    const hasAlternativeSelected = selectedAlternative !== undefined
 
     return (
         <Widget>
@@ -56,27 +92,37 @@ function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit }) {
                 <h2>{question.title}</h2>
                 <p>{question.description}</p>
 
-                <form onSubmit={(e) => {
+                <AlternativesForm onSubmit={(e) => {
                     e.preventDefault()
-                    onSubmit()
+                    setIsQuestionSubmited(true)
+
+                    setTimeout(() => {
+                        addResult(isCorrect)
+                        onSubmit()
+                        setIsQuestionSubmited(false)
+                        setSelectedAlternative(undefined)
+                    }, 3000)
                 }}>
                     {question.alternatives.map((alternative, index) => {
 
                         const alternativeID = `alternative_${index}`
+                        const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR'
+                        const isSelected = selectedAlternative === index
 
                         return (
-                            <Widget.Topic as="label" htmlFor={alternativeID} key={index}
-                                // style={{
-                                //     borderWidth: 1,
-                                //     borderColor: '#f00',
-                                //     borderStyle: 'solid'
-                                // }}
-                                >
+                            <Widget.Topic
+                                as="label"
+                                htmlFor={alternativeID}
+                                key={alternativeID}
+                                data-selected={isSelected}
+                                data-status={isQuestionSubmited && alternativeStatus}
+                            >
 
                                 <input
-                                    // style={{ display: 'none' }}
+                                    style={{ display: 'none' }}
                                     id={alternativeID}
-                                    name={questionIndex}
+                                    onChange={() => setSelectedAlternative(index)}
+                                    name={questionId}
                                     type="radio"
                                 />
                                 {alternative}
@@ -85,8 +131,13 @@ function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit }) {
                     })}
                     <Button
                         text="Confirmar"
+                        disabled={!hasAlternativeSelected}
                     />
-                </form>
+
+                    {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
+                    {isQuestionSubmited && !isCorrect && <p>Você Errou!</p>}
+
+                </AlternativesForm>
 
 
             </Widget.Content>
@@ -103,13 +154,19 @@ const screenStates = {
 
 export default function QuizPage() {
 
-    const [loading, setLoading] = useState(true)
     const [screenState, setScreenState] = useState(screenStates.LOADING);
-
+    const [results, setResults] = useState([])
     const totalQuestions = db.questions.length
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const questionIndex = currentQuestion
     const question = db.questions[questionIndex]
+
+    function addResult(result) {
+        setResults([
+            ...results,
+            result
+        ])
+    }
 
 
     useEffect(() => {
@@ -144,15 +201,14 @@ export default function QuizPage() {
                                 totalQuestions={totalQuestions}
                                 questionIndex={questionIndex}
                                 onSubmit={handleSubmit}
+                                addResult={addResult}
                             />
                         )
                         }
 
                         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-                        {screenState === screenStates.RESULT && <div>Você acertou X questões, parabéns!</div>}
-
-
+                        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
 
 
                     </QuizContainer>

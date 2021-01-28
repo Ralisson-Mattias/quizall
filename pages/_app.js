@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
 
         <title>QuizGod</title>
         <meta name="title" content="QuizGod" />
-        <meta name="description" content="Um quiz sobre o halloween" />
+        <meta name="description" content="Um quiz sobre o God Of War" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://quizall.ralisson-mattias.vercel.app/" />
