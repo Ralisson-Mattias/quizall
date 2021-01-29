@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import db from '../db.json'
 
-import Button from '../src/components/Button'
-import QuizBackground from '../src/components/QuizBackground'
-import QuizLogo from '../src/components/QuizLogo'
-import Widget from '../src/components/Widget'
-import GitHubCorner from '../src/components/GitHubCorner'
-import QuizContainer from '../src/components/QuizContainer'
-import AlternativesForm from '../src/components/AlternativesForm'
+// import db from '../../../db.json'
+import AlternativesForm from '../../components/AlternativesForm'
+import BackLinkArrow from '../../components/BackLinkArrow'
+import Button from '../../components/Button'
+import GitHubCorner from '../../components/GitHubCorner'
+import QuizBackground from '../../components/QuizBackground'
+import QuizContainer from '../../components/QuizContainer'
+import QuizLogo from '../../components/QuizLogo'
+import Widget from '../../components/Widget'
+
 
 
 function ResultWidget({ results }) {
@@ -73,6 +75,7 @@ function QuestionWidget({ question, totalQuestions, questionIndex, onSubmit, add
     return (
         <Widget>
             <Widget.Header>
+                <BackLinkArrow href="/" />
                 <h3>
                     {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
                 </h3>
@@ -152,14 +155,16 @@ const screenStates = {
     RESULT: 'RESULT',
 };
 
-export default function QuizPage() {
+export default function QuizPage({ externalQuestions, externalBg }) {
 
     const [screenState, setScreenState] = useState(screenStates.LOADING);
     const [results, setResults] = useState([])
-    const totalQuestions = db.questions.length
+    const totalQuestions = externalQuestions.length
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const questionIndex = currentQuestion
-    const question = db.questions[questionIndex]
+    const question = externalQuestions[questionIndex]
+
+    const bg = externalBg
 
     function addResult(result) {
         setResults([
@@ -189,7 +194,7 @@ export default function QuizPage() {
     return (
         <>
             <>
-                <QuizBackground backgroundImage={db.bgquiz}>
+                <QuizBackground backgroundImage={bg}>
                     <QuizContainer>
 
                         <QuizLogo />
