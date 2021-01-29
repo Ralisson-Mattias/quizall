@@ -26,7 +26,7 @@ const Button = styled.button`
     }
 
     &:disabled {
-        background-color: '#979797';
+        background-color: ${({ theme }) => theme.colors.disabled};
         cursor: not-allowed;
     }
     

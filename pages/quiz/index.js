@@ -8,6 +8,7 @@ import Widget from '../../src/components/Widget'
 import GitHubCorner from '../../src/components/GitHubCorner'
 import QuizContainer from '../../src/components/QuizContainer'
 import AlternativesForm from '../../src/components/AlternativesForm'
+import Link from '../../src/components/Link'
 
 
 function ResultWidget({ results }) {
@@ -37,6 +38,8 @@ function ResultWidget({ results }) {
                         </li>
                     ))}
                 </ul>
+
+                <Widget.Topic as={Link} href="/" >Voltar para a home</Widget.Topic>
             </Widget.Content>
 
         </Widget>

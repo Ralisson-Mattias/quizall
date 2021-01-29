@@ -5,25 +5,75 @@
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "image": "https://media.tenor.com/images/2959fe2cfc1e672027c3a613a83a1481/tenor.gif",
+      "title": "Em God of war 3, um Deus mata o titã Epimeteu, que Deus é esse?",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": 0,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Poseidon",
+        "Hades",
+        "Hélios",
+        "Zeus"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
+      "image": "https://media.tenor.com/images/dcc9ac7aba8075c41c52f153f58310c8/tenor.gif",
+      "title": "Em qual saga do jogo, Kratos enfrenta o Hecatônquiros?",
+      "description": "Qual será em?",
+      "answer": 1,
+      "alternatives": [
+        "God of War 3",
+        "God of War Ascension",
+        "God of War 2",
+        "God of War Ghost of Sparta"
+      ]
+    },
+    {
+      "image": "https://media.tenor.com/images/a32d0ea9e38e6e4ef2177d4e87fc6845/tenor.gif",
+      "title": "Em qual jogo da saga God of War, Kratos mata a titã Thera?",
+      "description": "hehehehehe",
+      "answer": 1,
+      "alternatives": [
+        "God of War 1",
+        "God of War Ghost of Sparta",
+        "God of War 3",
+        "God of War Chain of Olympus"
+      ]
+    },
+    {
+      "image": "https://media.tenor.com/images/ff1cba67e2a3ff37106685e7610f3907/tenor.gif",
+      "title": "Qual desses é filho de Thor em God of War 4?",
+      "description": "Daria um bom filme",
+      "answer": 2,
+      "alternatives": [
+        "Freya",
+        "Baldur",
+        "Modi",
+        "Atreus"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/mTxVgsO5slQAAAAj/%D0%BA%D1%80%D0%B0%D1%82%D0%BE%D1%81-krathos.gif",
+      "title": "Como Kratos mata Ares em god of war 1?",
       "description": "Faz tempo em haha",
       "answer": 0,
       "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
+        "Com uma espada",
+        "Com um machado",
+        "Com as Lâmninas do Exílio",
+        "Com as Lâminas do Caos"
+      ]
+    },
+    {
+      "image": "https://media.tenor.com/images/3a2e3354cbed5fc41c25bb6a75484d35/tenor.gif",
+      "title": "Kratos mata o Deus da Morte, Thanatos, em qual saga do jogo?",
+      "description": "Qual?",
+      "answer": 1,
+      "alternatives": [
+        "God of War Ascension",
+        "God of War Ghost of Sparta",
+        "God of War 3",
+        "God of War 2"
       ]
     }
   ],
@@ -38,6 +88,7 @@
       "mainBg": "#171B35",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
+      "disabled": "#979797",
       "success": "#4CAF50"
     },
     "borderRadius": "4px"
